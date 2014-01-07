@@ -28,7 +28,9 @@ import ru.truba.touchgallery.TouchView.UrlTouchImageView;
  Class wraps URLs to adapter, then it instantiates {@link UrlTouchImageView} objects to paging up through them.
  */
 public class UrlPagerAdapter extends BasePagerAdapter {
-	
+
+    private OnUrlItemClickListener urlItemClickListener;
+
 	public UrlPagerAdapter(Context context, List<String> resources)
 	{
 		super(context, resources);
@@ -48,4 +50,13 @@ public class UrlPagerAdapter extends BasePagerAdapter {
         collection.addView(iv, 0);
         return iv;
     }
+
+    public OnUrlItemClickListener getUrlItemClickListener() {
+        return urlItemClickListener;
+    }
+
+    public void setUrlItemClickListener(OnUrlItemClickListener urlItemClickListener) {
+        this.urlItemClickListener = urlItemClickListener;
+    }
+
 }
